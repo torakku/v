@@ -14,7 +14,7 @@ go get github.com/KuroiKitsu/discord-cagliostro/...
 
 Create a `cagliostro.json` file with this content:
 
-```
+```json
 {
   "token": "YOUR_TOKEN",
   "prefix": "!",
