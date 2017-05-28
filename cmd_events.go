@@ -50,7 +50,7 @@ func (c *Cagliostro) cmdEvents(s *discordgo.Session, m *discordgo.MessageCreate)
 
 		if !event.Details.EndsAt.IsZero() {
 			endsAt := event.Details.EndsAt.UTC().Format("2006-01-02 15:04:05 MST")
-			value = fmt.Sprintf("Ends %s", endsAt)
+			value = fmt.Sprintf("Ends on %s", endsAt)
 		}
 
 		em.Fields = append(em.Fields, &discordgo.MessageEmbedField{
@@ -64,7 +64,7 @@ func (c *Cagliostro) cmdEvents(s *discordgo.Session, m *discordgo.MessageCreate)
 
 		if event.Details != nil && !event.Details.StartsAt.IsZero() {
 			startsAt := event.Details.StartsAt.UTC().Format("2006-01-02 15:04:05 MST")
-			value = fmt.Sprintf("Begins %s", startsAt)
+			value = fmt.Sprintf("Begins on %s", startsAt)
 		}
 
 		em.Fields = append(em.Fields, &discordgo.MessageEmbedField{
