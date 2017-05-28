@@ -19,6 +19,9 @@ type CachedEvent struct {
 
 // CurrentEvents returns the ongoing events.
 func (c *Cagliostro) CurrentEvents() (events []*CachedEvent, err error) {
+	c.eventsMutex.Lock()
+	defer c.eventsMutex.Unlock()
+
 	if len(c.currentEvents) > 0 {
 		alive := true
 
@@ -67,6 +70,9 @@ func (c *Cagliostro) CurrentEvents() (events []*CachedEvent, err error) {
 
 // UpcomingEvents returns the upcoming events.
 func (c *Cagliostro) UpcomingEvents() (events []*CachedEvent, err error) {
+	c.eventsMutex.Lock()
+	defer c.eventsMutex.Unlock()
+
 	if len(c.upcomingEvents) > 0 {
 		alive := true
 

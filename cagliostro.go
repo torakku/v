@@ -3,6 +3,7 @@ package cagliostro
 import (
 	"errors"
 	"strings"
+	"sync"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -16,6 +17,7 @@ type Cagliostro struct {
 
 	Logger Logger
 
+	eventsMutex    sync.Mutex
 	currentEvents  []*CachedEvent
 	upcomingEvents []*CachedEvent
 
