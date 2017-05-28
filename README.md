@@ -1,8 +1,15 @@
 # Cagliostro (Discord)
 
-Granblue Fantasy bot for Discord, based on [risend/vampy][].
+Granblue Fantasy bot for Discord.
 
-[risend/vampy]: <https://github.com/risend/vampy>
+This bot exists as a free and open source alternative to
+the proprietary [risend/vampy][] bot.
+
+[risend/vampy]: <https://risend.github.io/vampy/>
+
+## Features
+
+* [risend/vampy][]-compatible emoji.
 
 ## Install
 
@@ -26,7 +33,7 @@ Create a `cagliostro.json` file with this content:
 
 Just run it as `cagliostro`.
 
-A `cagliostro.json` file must exist in the working directory.
+There must exist a `cagliostro.json` file in the working directory.
 
 ## Commands
 
@@ -43,7 +50,7 @@ If you want to use `whoa.png`, then the command is `!emo whoa`.
 
 ## Contact
 
-* [Discord](https://discord.gg/FH5zuJh)
+* [Discord](https://discord.gg/R8VkY8t)
 
 ## License
 
