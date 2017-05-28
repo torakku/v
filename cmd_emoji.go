@@ -9,6 +9,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+// cmdEmoji handles the emoji command.
 func (c *Cagliostro) cmdEmoji(s *discordgo.Session, m *discordgo.MessageCreate, emoji string) error {
 	var (
 		err error

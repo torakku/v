@@ -1,4 +1,5 @@
 /*
-Package cagliostro implements a Discord bot.
+Package cagliostro provides a Discord bot with functionality related to
+Granblue Fantasy.
 */
 package cagliostro

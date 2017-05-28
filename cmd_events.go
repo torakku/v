@@ -7,6 +7,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+// cmdEvents handles the events command.
 func (c *Cagliostro) cmdEvents(s *discordgo.Session, m *discordgo.MessageCreate) error {
 	var (
 		err error

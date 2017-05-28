@@ -10,12 +10,14 @@ const (
 	EventCacheTTL = 30 * time.Minute
 )
 
+// CachedEvent wraps an event, its details, and its expiration date.
 type CachedEvent struct {
 	Event     *gbf.Event
 	Details   *gbf.EventDetails
 	ExpiresAt time.Time
 }
 
+// CurrentEvents returns the ongoing events.
 func (c *Cagliostro) CurrentEvents() (events []*CachedEvent, err error) {
 	if len(c.currentEvents) > 0 {
 		alive := true
@@ -63,6 +65,7 @@ func (c *Cagliostro) CurrentEvents() (events []*CachedEvent, err error) {
 	return
 }
 
+// Upcoming events returns the upcoming events.
 func (c *Cagliostro) UpcomingEvents() (events []*CachedEvent, err error) {
 	if len(c.upcomingEvents) > 0 {
 		alive := true

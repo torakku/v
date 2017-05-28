@@ -7,6 +7,8 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+// Cagliostro is the main struct that wraps all the data required by
+// the bot.
 type Cagliostro struct {
 	Token    string
 	Prefix   string
@@ -20,6 +22,9 @@ type Cagliostro struct {
 	session *discordgo.Session
 }
 
+// logger returns c.Logger when available, falling back to a no-op logger.
+//
+// This function never returns nil.
 func (c *Cagliostro) logger() Logger {
 	if c.Logger == nil {
 		return quietLoggerSingleton
@@ -28,6 +33,7 @@ func (c *Cagliostro) logger() Logger {
 	return c.Logger
 }
 
+// OnMessageCreate is the event handler for discordgo library.
 func (c *Cagliostro) OnMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if c.Prefix == "" {
 		return
@@ -69,6 +75,7 @@ func (c *Cagliostro) OnMessageCreate(s *discordgo.Session, m *discordgo.MessageC
 	}
 }
 
+// Open starts a connection with Discord.
 func (c *Cagliostro) Open() error {
 	if c.session != nil {
 		return errors.New("session already opened")
@@ -102,6 +109,7 @@ func (c *Cagliostro) Open() error {
 	return nil
 }
 
+// Close terminates the connection with Discord.
 func (c *Cagliostro) Close() error {
 	if c.session == nil {
 		return errors.New("no session")
