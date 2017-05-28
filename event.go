@@ -15,6 +15,11 @@ type CachedEvent struct {
 	Event     *gbf.Event
 	Details   *gbf.EventDetails
 	ExpiresAt time.Time
+	touchedAt time.Time
+}
+
+func (event *CachedEvent) touch() {
+	event.touchedAt = time.Now()
 }
 
 // CurrentEvents returns the ongoing events.
