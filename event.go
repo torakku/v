@@ -65,7 +65,7 @@ func (c *Cagliostro) CurrentEvents() (events []*CachedEvent, err error) {
 	return
 }
 
-// Upcoming events returns the upcoming events.
+// UpcomingEvents returns the upcoming events.
 func (c *Cagliostro) UpcomingEvents() (events []*CachedEvent, err error) {
 	if len(c.upcomingEvents) > 0 {
 		alive := true
