@@ -3,7 +3,7 @@ package cagliostro
 import (
 	"fmt"
 
-	"github.com/KuroiKitsu/go-gbf"
+	"github.com/recnaleerf/go-gbf"
 	"github.com/bwmarrin/discordgo"
 )
 
