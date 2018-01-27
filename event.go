@@ -3,7 +3,7 @@ package cagliostro
 import (
 	"time"
 
-	"github.com/KuroiKitsu/go-gbf"
+	"github.com/recnaleerf/go-gbf"
 )
 
 const (
