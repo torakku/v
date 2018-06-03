@@ -1,10 +1,57 @@
 {
-    "ImportPath": "github.com/torakku/v",
-    "GoVersion": "go1.9.5",
-    "Packages": [
-        "./..."
-    ],
-    "Deps": [
-
-        ]
+	"ImportPath": "github.com/torakku/v",
+	"GoVersion": "go1.9",
+	"GodepVersion": "v80",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/PuerkitoBio/goquery",
+			"Comment": "v1.2.0-2-g2324bda",
+			"Rev": "2324bda66f504d95adef95070aeb15187b45d3cf"
+		},
+		{
+			"ImportPath": "github.com/andybalholm/cascadia",
+			"Rev": "349dd0209470eabd9514242c688c403c0926d266"
+		},
+		{
+			"ImportPath": "github.com/arbovm/levenshtein",
+			"Rev": "48b4e1c0c4d0b8b1864f1bd2cd31bb20147e4636"
+		},
+		{
+			"ImportPath": "github.com/bwmarrin/discordgo",
+			"Comment": "v0.18.0",
+			"Rev": "4a33b9bc7c56cfdb9bb244e33e83cb3941fe2bdc"
+		},
+		{
+			"ImportPath": "github.com/gorilla/websocket",
+			"Comment": "v1.2.0-27-g91f589d",
+			"Rev": "91f589db023d66e4aba7112d44cc0d2fb091c553"
+		},
+		{
+			"ImportPath": "github.com/recnaleerf/go-gbf",
+			"Rev": "d095553aa2e7b1fd536064285ed464aba3d49613"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/nacl/secretbox",
+			"Rev": "0efb9460aaf800c6376acf625be2853bceac2e06"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/poly1305",
+			"Rev": "0efb9460aaf800c6376acf625be2853bceac2e06"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/salsa20/salsa",
+			"Rev": "0efb9460aaf800c6376acf625be2853bceac2e06"
+		},
+		{
+			"ImportPath": "golang.org/x/net/html",
+			"Rev": "0ed95abb35c445290478a5348a7b38bb154135fd"
+		},
+		{
+			"ImportPath": "golang.org/x/net/html/atom",
+			"Rev": "0ed95abb35c445290478a5348a7b38bb154135fd"
+		}
+	]
 }
