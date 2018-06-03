@@ -1,1 +1,1 @@
-worker: go run cmd/cagliostro/config.go  cmd/cagliostro/main.go
+worker: run cmd/cagliostro/config.go  cmd/cagliostro/main.go
