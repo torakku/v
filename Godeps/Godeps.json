@@ -5,10 +5,6 @@
         "./..."
     ],
     "Deps": [
-        {
-              "ImportPath": "github.com/arbovm/levenshtein",}
-        {      "ImportPath": "github.com/bwmarrin/discordgo",}
-        {     "ImportPath": "github.com/recnaleerf/go-gbf",
-        }
+
         ]
 }
