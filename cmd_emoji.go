@@ -19,8 +19,8 @@ const (
 
 // cmdEmoji handles the emoji command.
 func (c *Cagliostro) cmdEmoji(s *discordgo.Session, m *discordgo.MessageCreate, emoji string) error {
-	if emoji == "" {
-		return errors.New("Please specify an emoji.")
+	if emoji == "" { // Case of !emo
+		return errors.New("Please specify an emoji")
 	}
 
 	var (
@@ -28,7 +28,13 @@ func (c *Cagliostro) cmdEmoji(s *discordgo.Session, m *discordgo.MessageCreate, 
 		f   *os.File
 	)
 
-	name := fmt.Sprintf("%s.png", emoji)
+	name := ""
+	if strings.HasSuffix(emoji, "gif") { // Checks for gif as the final part
+		name = fmt.Sprintf("%s.gif", emoji)
+	} else { // If we don't get an emote specifying gif, we match to png instead
+		name = fmt.Sprintf("%s.png", emoji) // Tries to match up by concatanating passed in emoji name to .png
+	}
+
 	file := path.Join(c.EmojiDir, name)
 
 	f, err = os.Open(file)
@@ -46,24 +52,29 @@ func (c *Cagliostro) cmdEmoji(s *discordgo.Session, m *discordgo.MessageCreate, 
 		similarNames []string
 	)
 
-	f, err = os.Open(c.EmojiDir)
+	f, err = os.Open(c.EmojiDir) // Open Emoji Directory
 	if err != nil {
 		return err
 	}
 	defer f.Close()
 
-	entries, err = f.Readdirnames(-1)
+	entries, err = f.Readdirnames(-1) // Read names from our directory
 	if err != nil {
 		return err
 	}
 
 	names = make([]string, 0, len(entries))
-	for _, entry := range entries {
-		if !strings.HasSuffix(entry, ".png") {
+	for _, entry := range entries { // Range over our entries
+		if !strings.HasSuffix(entry, ".png") && !strings.HasSuffix(entry, ".gif") {
 			continue
 		}
 
-		name := strings.TrimSuffix(entry, ".png")
+		name := ""
+		if strings.HasSuffix(entry, ".png") { // Check for which one we have, a .png or .gif, and Trim appropriate
+			name = strings.TrimSuffix(entry, ".png")
+		} else {
+			name = strings.TrimSuffix(entry, ".gif")
+		}
 		name = fmt.Sprintf("%s", name)
 
 		names = append(names, name)
