@@ -1,0 +1,12 @@
+{
+    "ImportPath": "github.com/torakku/v",
+    "GoVersion": "go1.9.5",
+    "Packages": [
+        "./..."
+    ],
+    "Deps": [
+        {
+
+        }
+        ]
+}
