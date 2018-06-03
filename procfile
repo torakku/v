@@ -1,1 +1,2 @@
-worker: cagliostro
+worker: main.go
+worker: config.go
