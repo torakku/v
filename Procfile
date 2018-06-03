@@ -1,1 +1,1 @@
-worker: cmd/cagliostro
+worker: cagliostro
