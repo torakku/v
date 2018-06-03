@@ -1,1 +1,1 @@
-worker: cagliostro/config cagliostro/main
+worker: cmd/cagliostro
