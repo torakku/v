@@ -38,11 +38,11 @@ func (c *Cagliostro) cmdKill(s *discordgo.Session, m *discordgo.MessageCreate, p
 	rando := rand.Intn(killSayings) // generate a random number from killSayings
 	err := errors.New("Our Case statement failed somehow we got issues bud")
 	switch rando {
-	case 1:
+	case 0:
 		_, err = s.ChannelMessageSend(m.ChannelID, "Omae wa mou, shindeiru "+person+" <:mewgun:572168026506526760>")
-	case 2:
+	case 1:
 		_, err = s.ChannelMessageSend(m.ChannelID, "Shinei "+person+" <:CatKnife:440039640590712832>")
-	case 3:
+	case 2:
 		_, err = s.ChannelMessageSend(m.ChannelID, "It is time to pay for your crimes "+person)
 		_ = c.cmdEmoji(s, m, "truckgif") // Assumes truckgif.gif exists
 	}
