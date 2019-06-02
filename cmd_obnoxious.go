@@ -19,7 +19,7 @@ const (
 // This function sets the Keisatsu on a Hanin
 func (c *Cagliostro) cmdPolice(s *discordgo.Session, m *discordgo.MessageCreate, person string) error {
 	if !strings.HasPrefix(person, "@") { // Case of !emo
-		return errors.New("Please specify a criminal starting with @")
+		return errors.New("Please specify a criminal starting with @. By the way, you tried to target " + person)
 	}
 
 	_, err := s.ChannelMessageSend(m.ChannelID, person+" COME WITH ME SIR :CatPolice: :KannaPolice: ") // Assumes those emojis exist in that server or this bot's on Nitro
