@@ -69,7 +69,13 @@ func (c *Cagliostro) OnMessageCreate(s *discordgo.Session, m *discordgo.MessageC
 	case "events":
 		err = c.cmdEvents(s, m)
 	case "emo":
-		err = c.cmdEmoji(s, m, tail)
+		err = c.cmdEmoji(s, m, strings.Split(tail, " ")[0]) // This way we can emoji and also include more text after. Not included within other commands because usernames can have spaces
+	case "police":
+		err = c.cmdPolice(s, m, tail)
+	case "kill":
+		err = c.cmdKill(s, m, tail)
+	case "pasta":
+		// err = c.cmdPasta(s, m)
 	}
 
 	if err != nil {
